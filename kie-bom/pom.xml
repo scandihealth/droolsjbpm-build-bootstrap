@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent-metadata</artifactId>
-    <version>6.5.0.Final</version>
+    <version>6.5.0.csc-SNAPSHOT</version>
   </parent>
 
   <groupId>org.kie</groupId>
@@ -465,12 +465,12 @@
       <dependency>
         <groupId>org.kie.workbench.widgets</groupId>
         <artifactId>kie-wb-common-ui</artifactId>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.kie.workbench.widgets</groupId>
         <artifactId>kie-wb-common-ui</artifactId>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
 

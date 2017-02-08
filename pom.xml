@@ -22,7 +22,20 @@
   <!-- major.minor.micro.Final -->
   <!-- For example: 1.2.3 without the suffix ".Final" corrupts the OSGi eclipse updatesite -->
   <!-- For example: 1.2.3.M2 corrupts the OSGi eclipse updatesite update order -->
-  <version>6.5.0.Final</version>
+  <version>6.5.0.csc-SNAPSHOT</version>
+
+  <distributionManagement>
+    <repository>
+      <id>scandihealth.com</id>
+      <name>miller.scandihealth.com-releases</name>
+      <url>http://repo.maven.scandihealth.com/ext-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>scandihealth.com</id>
+      <name>miller.scandihealth.com-snapshots</name>
+      <url>http://repo.maven.scandihealth.com/ext-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <name>KIE (Drools, jBPM, OptaPlanner) parent metadata</name>
   <description>
@@ -44,6 +57,7 @@
   </licenses>
 
   <properties>
+    <version.com.csc>6.5.0.csc-SNAPSHOT</version.com.csc>
     <!-- Internal dependencies -->
     <version.org.kie>6.5.0.Final</version.org.kie>
     <version.org.drools>${version.org.kie}</version.org.drools>

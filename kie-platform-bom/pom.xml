@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent-metadata</artifactId>
-    <version>6.5.0.Final</version>
+    <version>6.5.0.csc-SNAPSHOT</version>
   </parent>
 
   <artifactId>kie-platform-bom</artifactId>
@@ -38,14 +38,14 @@
         <groupId>org.kie</groupId>
         <artifactId>kie-bom</artifactId>
         <type>pom</type>
-        <version>${version.org.kie}</version>
+        <version>${version.com.csc}</version>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-bom</artifactId>
         <type>pom</type>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <scope>import</scope>
       </dependency>
       <dependency>
