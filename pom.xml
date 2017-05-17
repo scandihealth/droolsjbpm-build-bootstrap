@@ -61,11 +61,12 @@
     <!-- Internal dependencies -->
     <version.org.kie>${version.com.csc}</version.org.kie>
     <version.org.drools>6.5.0.Final</version.org.drools>
-    <version.org.optaplanner>${version.org.kie}</version.org.optaplanner>
-    <version.org.jbpm>${version.org.kie}</version.org.jbpm>
-    <version.org.jbpm.dashboard-builder>${version.org.kie}</version.org.jbpm.dashboard-builder>
+    <version.org.optaplanner>${version.org.drools}</version.org.optaplanner>
+    <version.org.jbpm>${version.org.drools}</version.org.jbpm>
+    <version.org.jbpm.dashboard-builder>${version.org.drools}</version.org.jbpm.dashboard-builder>
     <version.org.drools.droolsjbpm-integration>${version.org.drools}</version.org.drools.droolsjbpm-integration>
     <version.org.uberfire>0.9.0.Final</version.org.uberfire>
+    <version.org.uberfire.extensions>0.9.0.csc-SNAPSHOT</version.org.uberfire.extensions>
     <version.org.dashbuilder>0.5.0.Final</version.org.dashbuilder>
     <version.org.guvnor>${version.com.csc}</version.org.guvnor>
     <version.org.kie.uberfire.extensions>${version.org.drools}</version.org.kie.uberfire.extensions>

@@ -134,7 +134,7 @@
         <groupId>org.uberfire</groupId>
         <artifactId>uberfire-extensions-bom</artifactId>
         <type>pom</type>
-        <version>${version.org.uberfire}</version>
+        <version>${version.org.uberfire.extensions}</version>
         <scope>import</scope>
       </dependency>
       <dependency>
