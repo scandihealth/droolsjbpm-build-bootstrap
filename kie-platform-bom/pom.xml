@@ -84,7 +84,7 @@
         <groupId>org.guvnor</groupId>
         <artifactId>guvnor-bom</artifactId>
         <type>pom</type>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
         <scope>import</scope>
       </dependency>
       <dependency>
