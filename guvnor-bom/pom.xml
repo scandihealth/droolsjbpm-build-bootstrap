@@ -244,6 +244,11 @@
         <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
+      <dependency>
+        <groupId>org.guvnor</groupId>
+        <artifactId>guvnor-services-consts</artifactId>
+        <version>${version.com.csc}</version>
+      </dependency>
       <!--Guvnor M2_REPO Editor -->
       <dependency>
         <groupId>org.guvnor</groupId>
