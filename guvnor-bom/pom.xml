@@ -246,7 +246,7 @@
       </dependency>
       <dependency>
         <groupId>org.guvnor</groupId>
-        <artifactId>guvnor-services-consts</artifactId>
+        <artifactId>guvnor-lpr-consts</artifactId>
         <version>${version.com.csc}</version>
       </dependency>
       <!--Guvnor M2_REPO Editor -->
