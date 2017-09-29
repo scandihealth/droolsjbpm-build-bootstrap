@@ -75,6 +75,7 @@
     <version.org.jbpm.jbpm-designer>${version.org.jbpm}</version.org.jbpm.jbpm-designer>
     <version.org.jbpm.jbpm-form-modeler>${version.org.jbpm}</version.org.jbpm.jbpm-form-modeler>
     <version.org.jbpm.jbpm-console-ng>${version.org.jbpm}</version.org.jbpm.jbpm-console-ng>
+    <maven.build.timestamp.format>HHmm dd-MM-yyyy</maven.build.timestamp.format>
 
     <!-- CONVENTIONS:
            - A version property must be specified in the format "version.{groupId}", optionally with a suffix to make it unique.
@@ -175,7 +176,8 @@
     <!-- property for productisation to know the last released version -->
     <latestReleasedVersionFromThisBranch>6.5.0.Final</latestReleasedVersionFromThisBranch>
     <!-- Version of the KIE Workbench application. Shown for example in About dialog. Will be usually overridden by productisation. -->
-    <version.org.kie.workbench.app>${version.org.kie}</version.org.kie.workbench.app>
+    <version.org.kie.workbench.app>${version.com.csc}</version.org.kie.workbench.app>
+    <version.org.kie.workbench.app.timestamp>${maven.build.timestamp}</version.org.kie.workbench.app.timestamp>
 
     <!-- Using origin-repository.jboss.org as that is the canonical URL for deployment. repository.jboss.org is just a proxy
          which should delegate the calls to origin-repository.jboss.org, but that is often buggy. Using the canonical URL
