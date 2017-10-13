@@ -440,24 +440,29 @@
       <!--KIE Common - Core Services -->
       <dependency>
         <groupId>org.kie.workbench.services</groupId>
-        <artifactId>kie-wb-common-services-api</artifactId>
-        <version>${version.org.guvnor}</version>
+        <artifactId>kie-wb-common-lpr-log</artifactId>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.kie.workbench.services</groupId>
         <artifactId>kie-wb-common-services-api</artifactId>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.kie.workbench.services</groupId>
+        <artifactId>kie-wb-common-services-api</artifactId>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.kie.workbench.services</groupId>
         <artifactId>kie-wb-common-services-backend</artifactId>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.kie.workbench.services</groupId>
         <artifactId>kie-wb-common-services-backend</artifactId>
-        <version>${version.org.guvnor}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
 
