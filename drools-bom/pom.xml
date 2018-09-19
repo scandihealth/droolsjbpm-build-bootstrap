@@ -222,56 +222,56 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-dtable</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-dtable</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-dtree</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-dtree</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-template</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-template</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-scorecard</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-guided-scorecard</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-test-scenarios</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-workbench-models-test-scenarios</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.com.csc}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
