@@ -22,7 +22,7 @@
   <!-- major.minor.micro.Final -->
   <!-- For example: 1.2.3 without the suffix ".Final" corrupts the OSGi eclipse updatesite -->
   <!-- For example: 1.2.3.M2 corrupts the OSGi eclipse updatesite update order -->
-  <version>6.5.0.csc-SNAPSHOT</version>
+  <version>${revision}${changelist}</version>
 
   <name>KIE (Drools, jBPM, OptaPlanner) parent metadata</name>
   <description>
@@ -57,7 +57,9 @@
   </distributionManagement>
 
   <properties>
-    <version.com.csc>6.5.0.csc-SNAPSHOT</version.com.csc>
+    <revision>6.5.0.csc</revision>
+    <changelist>-SNAPSHOT</changelist>
+    <version.com.csc>${project.version}</version.com.csc>
     <!-- Internal dependencies -->
     <version.org.kie>6.5.0.Final</version.org.kie>
     <version.org.drools>${version.org.kie}</version.org.drools>
