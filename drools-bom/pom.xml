@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent-metadata</artifactId>
-    <version>6.5.0.csc-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
 
   <groupId>org.drools</groupId>

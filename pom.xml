@@ -22,7 +22,7 @@
   <!-- major.minor.micro.Final -->
   <!-- For example: 1.2.3 without the suffix ".Final" corrupts the OSGi eclipse updatesite -->
   <!-- For example: 1.2.3.M2 corrupts the OSGi eclipse updatesite update order -->
-  <version>${revision}${changelist}</version>
+  <version>${revision}</version>
 
   <name>KIE (Drools, jBPM, OptaPlanner) parent metadata</name>
   <description>
@@ -43,17 +43,6 @@
     </license>
   </licenses>
 
-  <modules>
-    <module>drools-bom</module>
-    <module>guvnor-bom</module>
-    <module>jbpm-bom</module>
-    <module>kie-bom</module>
-    <module>kie-parent-with-dependencies</module>
-    <module>kie-platform-bom</module>
-    <module>kie-uberfire-extensions-bom</module>
-    <module>optaplanner-bom</module>
-  </modules>
-
   <distributionManagement>
     <repository>
       <id>scandihealth</id>
@@ -68,7 +57,7 @@
   </distributionManagement>
 
   <properties>
-    <revision>6.5.0.csc</revision>
+    <revision>6.5.0.csc${changelist}</revision>
     <changelist>-SNAPSHOT</changelist>
     <version.com.csc>${project.version}</version.com.csc>
     <!-- Internal dependencies -->
@@ -178,6 +167,7 @@
     <!-- IMPORTANT: JDK8 is needed to build the projects (to support also WildFly 10), but we still do support JDK6/JDK7 for all backend modules. -->
     <jdk.min.version>1.8</jdk.min.version>
     <maven.min.version>3.6.0</maven.min.version>
+    <maven.enforcer.plugin.version>3.0.0-M3</maven.enforcer.plugin.version>
     <!-- Important: this is one and only place where the supported user agents (browsers) are configured.
          All webapps/showcases must use this property in their *.gwt.xml files.
          We only need to support IE11+, but there is no ie11 permutation. IE11 will use the Firefox one (gecko1_8) -->
@@ -284,6 +274,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven.enforcer.plugin.version}</version>
           <executions>
             <execution>
               <id>enforce-plugin-versions</id>
@@ -986,29 +977,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-        <version>1.0.1</version>
-        <configuration>
-        </configuration>
-        <executions>
-          <execution>
-            <id>flatten</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>flatten</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>flatten.clean</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>clean</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
   <reporting>
@@ -1152,6 +1120,18 @@
       </properties>
     </profile>
   </profiles>
+
+  <modules>
+    <module>kie-bom</module>
+    <module>drools-bom</module>
+    <module>optaplanner-bom</module>
+    <module>jbpm-bom</module>
+    <module>kie-uberfire-extensions-bom</module>
+    <module>guvnor-bom</module>
+    <module>dashboard-builder-bom</module>
+    <module>kie-platform-bom</module>
+    <module>kie-parent-with-dependencies</module>
+  </modules>
 
   <!-- IMPORTANT: Do not declare any dependencies here! Declare them in kie-parent-with-dependencies. -->
   <dependencyManagement/>
