@@ -6,12 +6,13 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent-metadata</artifactId>
-    <version>6.5.0.csc-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
 
   <groupId>org.optaplanner</groupId>
   <artifactId>optaplanner-bom</artifactId>
   <packaging>pom</packaging>
+<!--  <version>${revision}${changelist}</version>-->
 
   <name>OptaPlanner BOM (Bill Of Materials)</name>
   <description>
