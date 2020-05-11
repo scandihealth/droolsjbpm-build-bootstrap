@@ -12,7 +12,6 @@
   <groupId>org.optaplanner</groupId>
   <artifactId>optaplanner-bom</artifactId>
   <packaging>pom</packaging>
-<!--  <version>${revision}${changelist}</version>-->
 
   <name>OptaPlanner BOM (Bill Of Materials)</name>
   <description>
