@@ -67,7 +67,7 @@
     <version.org.jbpm>${version.org.kie}</version.org.jbpm>
     <version.org.jbpm.dashboard-builder>${version.org.kie}</version.org.jbpm.dashboard-builder>
     <version.org.drools.droolsjbpm-integration>${version.org.drools}</version.org.drools.droolsjbpm-integration>
-    <version.org.uberfire>0.9.0.csc-SNAPSHOT</version.org.uberfire>
+    <version.org.uberfire>0.9.0.csc.5</version.org.uberfire>
     <version.org.uberfire.extensions>0.9.0.csc-SNAPSHOT</version.org.uberfire.extensions>
     <version.org.dashbuilder>0.5.0.Final</version.org.dashbuilder>
     <version.org.guvnor>${version.org.drools}</version.org.guvnor>
@@ -983,6 +983,10 @@
         <version>1.2.2</version>
         <configuration>
           <updatePomFile>true</updatePomFile>
+          <pomElements>
+            <properties>remove</properties>
+            <dependencyManagement>resolve</dependencyManagement>
+          </pomElements>
         </configuration>
         <executions>
           <execution>
