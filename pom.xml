@@ -22,7 +22,7 @@
   <!-- major.minor.micro.Final -->
   <!-- For example: 1.2.3 without the suffix ".Final" corrupts the OSGi eclipse updatesite -->
   <!-- For example: 1.2.3.M2 corrupts the OSGi eclipse updatesite update order -->
-  <version>${revision}</version>
+  <version>${revision}${changelist}</version>
 
   <name>KIE (Drools, jBPM, OptaPlanner) parent metadata</name>
   <description>
@@ -57,7 +57,7 @@
   </distributionManagement>
 
   <properties>
-    <revision>6.5.0.csc${changelist}</revision>
+    <revision>6.5.0.csc</revision>
     <changelist>-SNAPSHOT</changelist>
     <version.com.csc>${project.version}</version.com.csc>
     <!-- Internal dependencies -->
@@ -166,8 +166,7 @@
     <!-- Used by maven-enforcer-plugin -->
     <!-- IMPORTANT: JDK8 is needed to build the projects (to support also WildFly 10), but we still do support JDK6/JDK7 for all backend modules. -->
     <jdk.min.version>1.8</jdk.min.version>
-    <maven.min.version>3.6.0</maven.min.version>
-    <maven.enforcer.plugin.version>3.0.0-M3</maven.enforcer.plugin.version>
+    <maven.min.version>3.2.3</maven.min.version>
     <!-- Important: this is one and only place where the supported user agents (browsers) are configured.
          All webapps/showcases must use this property in their *.gwt.xml files.
          We only need to support IE11+, but there is no ie11 permutation. IE11 will use the Firefox one (gecko1_8) -->
@@ -219,9 +218,9 @@
   </pluginRepositories>
 
   <scm>
-    <connection>scm:git:git@github.com:scandihealth/droolsjbpm-build-bootstrap.git</connection>
-    <developerConnection>scm:git:git@github.com:scandihealth/droolsjbpm-build-bootstrap.git</developerConnection>
-    <url>https://github.com/scandihealth/droolsjbpm-build-bootstrap</url>
+    <connection>scm:git:git@github.com:droolsjbpm/droolsjbpm-build-bootstrap.git</connection>
+    <developerConnection>scm:git:git@github.com:droolsjbpm/droolsjbpm-build-bootstrap.git</developerConnection>
+    <url>https://github.com/droolsjbpm/droolsjbpm-build-bootstrap</url>
   </scm>
   <ciManagement>
     <system>hudson</system>
@@ -274,7 +273,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven.enforcer.plugin.version}</version>
           <executions>
             <execution>
               <id>enforce-plugin-versions</id>
