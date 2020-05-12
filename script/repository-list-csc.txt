@@ -1,0 +1,8 @@
+csc-drools-extensions
+uberfire
+uberfire-extensions
+droolsjbpm-build-bootstrap
+drools
+guvnor
+kie-wb-common
+drools-wb
