@@ -78,6 +78,8 @@ startDateTime=`date +%s`
 echo "droolsjbpmOrganizationDir is $droolsjbpmOrganizationDir"
 cd $droolsjbpmOrganizationDir
 
+echo "Maven home is ${mvnHome}"
+
 for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
     echo
 
