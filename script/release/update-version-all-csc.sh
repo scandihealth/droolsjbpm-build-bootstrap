@@ -22,12 +22,12 @@ initializeWorkingDirAndScriptDir() {
 
 
 updateDroolsParentVersion() {
-    mvn -B -N versions:update-parent -Dfull\
+    '${mvnHome}/bin/mvn' -B -N versions:update-parent -Dfull\
      -DparentVersion=[$newDroolsVersion] -DallowSnapshots=true -DgenerateBackupPoms=false
 }
 
 updateDroolsChildModulesVersion() {
-    mvn -N -B versions:update-child-modules -Dfull\
+    '${mvnHome}/bin/mvn' -N -B versions:update-child-modules -Dfull\
      -DallowSnapshots=true -DgenerateBackupPoms=false
 }
 
@@ -38,12 +38,12 @@ updateDroolsParentAndChildVersions() {
 }
 
 updateUberfireParentVersion() {
-    mvn -B -N versions:update-parent -Dfull\
+    '${mvnHome}/bin/mvn' -B -N versions:update-parent -Dfull\
      -DparentVersion=[$newUberfireVersion] -DallowSnapshots=true -DgenerateBackupPoms=false
 }
 
 updateUberfireChildModulesVersion() {
-    mvn -N -B versions:update-child-modules -Dfull\
+    '${mvnHome}/bin/mvn' -N -B versions:update-child-modules -Dfull\
      -DallowSnapshots=true -DgenerateBackupPoms=false
 }
 
@@ -94,8 +94,8 @@ for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
         cd $repository
         if [ $repository == 'droolsjbpm-build-bootstrap' ]; then
             # first build&install the current version (usually SNAPSHOT) as it is needed later by other repos
-            mvn -B -U -Dfull clean install
-            mvn -B -N -Dfull versions:set -DnewVersion=$newDroolsVersion -DallowSnapshots=true -DgenerateBackupPoms=false
+            '${mvnHome}/bin/mvn' -B -U -Dfull clean install
+            '${mvnHome}/bin/mvn' -B -N -Dfull versions:set -DnewVersion=$newDroolsVersion -DallowSnapshots=true -DgenerateBackupPoms=false
             #sed -i "s/<version\.org\.kie>.*<\/version.org.kie>/<version.org.kie>$newDroolsVersion<\/version.org.kie>/" pom.xml
             sed -i "s/<version\.com\.csc>.*<\/version.com.csc>/<version.com.csc>$newDroolsVersion<\/version.com.csc>/" pom.xml
             sed -i "s/<version\.org\.uberfire>.*<\/version.org.uberfire>/<version.org.uberfire>$newUberfireVersion<\/version.org.uberfire>/" pom.xml
@@ -105,7 +105,7 @@ for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
                 sed -i "s/<latestReleasedVersionFromThisBranch>.*<\/latestReleasedVersionFromThisBranch>/<latestReleasedVersionFromThisBranch>$newDroolsVersion<\/latestReleasedVersionFromThisBranch>/" pom.xml
             fi
             # workaround for http://jira.codehaus.org/browse/MVERSIONS-161
-            mvn -B clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B clean install -DskipTests
             returnCode=$?
 
         elif [ $repository = 'jbpm' ]; then
@@ -115,7 +115,7 @@ for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
 
         elif [ $repository = 'droolsjbpm-tools' ]; then
             cd drools-eclipse
-            mvn -B -Dfull tycho-versions:set-version -DnewVersion=$newDroolsVersion
+            '${mvnHome}/bin/mvn' -B -Dfull tycho-versions:set-version -DnewVersion=$newDroolsVersion
             returnCode=$?
             # replace the leftovers not covered by the tycho plugin (bug?)
             # SNAPSHOT and release versions need to be handled differently
@@ -127,10 +127,10 @@ for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
             sed -i "s/version=\"[^\"]*\">/version=\"$versionToUse\">/" org.drools.updatesite/category.xml
             cd ..
             if [ $returnCode == 0 ]; then
-                mvn -B -N clean install
+                '${mvnHome}/bin/mvn' -B -N clean install
                 updateDroolsParentVersion
                 # workaround for http://jira.codehaus.org/browse/MVERSIONS-161
-                mvn -B -N clean install -DskipTests
+                '${mvnHome}/bin/mvn' -B -N clean install -DskipTests
                 cd drools-eclipse
                 updateDroolsParentVersion
                 cd ..
@@ -139,21 +139,21 @@ for repository in `cat ${scriptDir}/../repository-list-csc.txt` ; do
             fi
         elif [ $repository = 'uberfire' ]; then
           # first build&install the current version (usually SNAPSHOT) as it is needed later by other repos
-            mvn -B -U -Dfull clean install -DskipTests
-            mvn -B -N -Dfull versions:set -DnewVersion=$newUberfireVersion -DallowSnapshots=true -DgenerateBackupPoms=false
+            '${mvnHome}/bin/mvn' -B -U -Dfull clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B -N -Dfull versions:set -DnewVersion=$newUberfireVersion -DallowSnapshots=true -DgenerateBackupPoms=false
             # workaround for http://jira.codehaus.org/browse/MVERSIONS-161
-            mvn -B clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B clean install -DskipTests
             returnCode=$?
         elif [ $repository = 'uberfire-extensions' ]; then
             updateUberfireParentAndChildVersions
-            mvn -B clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B clean install -DskipTests
             returnCode=$?
         elif [ $repository = 'csc-drools-extensions' ]; then
           # first build&install the current version (usually SNAPSHOT) as it is needed later by other repos
-            mvn -B -U -Dfull clean install -DskipTests
-            mvn -B -N -Dfull versions:set -DnewVersion=$newDroolsVersion -DallowSnapshots=true -DgenerateBackupPoms=false
+            '${mvnHome}/bin/mvn' -B -U -Dfull clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B -N -Dfull versions:set -DnewVersion=$newDroolsVersion -DallowSnapshots=true -DgenerateBackupPoms=false
             # workaround for http://jira.codehaus.org/browse/MVERSIONS-161
-            mvn -B clean install -DskipTests
+            '${mvnHome}/bin/mvn' -B clean install -DskipTests
             returnCode=$?
         else
             updateDroolsParentAndChildVersions
