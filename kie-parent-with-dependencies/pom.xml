@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent-metadata</artifactId>
-    <version>${revision}</version>
+    <version>6.5.0.csc-SNAPSHOT</version>
   </parent>
 
   <artifactId>kie-parent-with-dependencies</artifactId>
@@ -33,17 +33,6 @@
         <type>pom</type>
         <version>${version.com.csc}</version>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${version.junit}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>2.23.0</version>
-        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
